@@ -16,6 +16,7 @@ module.exports = {
             {
                 test: /\.jsx?/i,
                 loader: 'babel-loader',
+                exclude: /node_modules/,
                 options: {
                     presets: ['env'],
                     plugins: [
@@ -24,6 +25,13 @@ module.exports = {
                 }
             }
         ]
+    },
+
+    resolve: {
+        alias: {
+            'react': 'preact-compat',
+            'react-dom': 'preact-compat',
+        }
     },
 
     //sourcemaps
